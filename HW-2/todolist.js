@@ -11,9 +11,9 @@ function newElement() {
     if (!isEmpty(TASK_DOM.value)) {
         $('.error').toast('show')
     } else {
-        if (TASK_DOM.value === valueArray) {
-            throw new Error("cannot be add the same contents");
-        }
+      if (TASK_DOM.value === valueArray) {
+        throw new Error("cannot be add the same contents") ;
+      }
 
         addItem(LIST_DOM, TASK_DOM)
 
@@ -35,19 +35,19 @@ function addItem(listDOM, taskDOM) {
     const t = document.createTextNode("X");
     btn.classList.add('bi', 'bi-trash3-fill', 'float-right', 'mr-4')
     btn.style.width = "30px"; btn.style.border = "none"; btn.style.height = "30px"; btn.style.backgroundColor = "#f78501";
-
+   
     btn.onmouseover = () => btn.style.backgroundColor = "#d9d9d9";
-    btn.onclick = () => {
-        li.remove();
-        localStorage.removeItem("value");
+    btn.onclick =  () => {
+        li.remove() ;
+        localStorage.removeItem("value") ;
     }
 
     btn.appendChild(t);
 
     li.append(btn)
 
-    localStorage.setItem("value", taskDOM.value);
-
+    localStorage.setItem("value" , taskDOM.value) ;
+    
 
 
 }
